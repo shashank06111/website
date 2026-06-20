@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vantra Electronics — Mobiles, Laptops & Appliances</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="nav" id="nav">
+  <div class="nav-grid">
+    <a href="#top" class="nav-logo">
+      <span class="nav-logo-mark">V</span>
+      <span class="nav-logo-text">VANTRA</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#categories"><span class="nav-num">01</span>Shop</a>
+      <a href="#products"><span class="nav-num">02</span>Products</a>
+      <a href="#why"><span class="nav-num">03</span>Why&nbsp;Us</a>
+      <a href="#brands"><span class="nav-num">04</span>Brands</a>
+      <a href="#stores"><span class="nav-num">05</span>Stores</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#stores" class="btn btn-ghost">Find a Store</a>
+      <button class="search-icon-btn" id="searchIconBtn" aria-label="Search products">🔍</button>
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        🛒<span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- mobile drawer -->
+  <div class="nav-drawer" id="navDrawer">
+    <a href="#categories">01 — Shop</a>
+    <a href="#products">02 — Products</a>
+    <a href="#why">03 — Why Us</a>
+    <a href="#brands">04 — Brands</a>
+    <a href="#stores">05 — Stores</a>
+    <div class="nav-drawer-actions">
+      <a href="#stores" class="btn btn-ghost">Find a Store</a>
+      <button class="btn btn-ghost" id="searchIconBtnMobile">🔍 Search</button>
+      <button class="btn btn-solid" id="cartBtnMobile">Cart (<span id="cartBadgeMobile">0</span>)</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== SEARCH PANEL (SQL-backed) ===================== -->
+<div class="search-overlay" id="searchOverlay"></div>
+<div class="search-panel" id="searchPanel">
+  <div class="search-panel-inner">
+    <span class="search-panel-icon">🔍</span>
+    <input type="text" id="searchInput" autocomplete="off"
+           placeholder="Search products — try “laptop”, “fridge”, “5G”, “256GB”…">
+    <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+  </div>
+  <div class="search-meta" id="searchMeta"></div>
+  <div class="search-results" id="searchResults">
+    <p class="search-hint" id="searchHint">
+      Search runs against the product database — try a category, a spec, or a brand-style keyword.
+    </p>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">EST. 2000 — KARNATAKA &amp; TELANGANA</p>
+      <h1>
+        Every device<br>
+        has a <span class="accent-text">spec sheet.</span><br>
+        So does this store.
+      </h1>
+      <p class="hero-sub">
+        Mobiles, laptops, TVs and home appliances from every brand worth owning —
+        sold by people who actually read the manual first.
+      </p>
+      <div class="hero-cta">
+        <a href="#categories" class="btn btn-solid btn-lg">Browse Catalogue</a>
+        <a href="#stores" class="btn btn-outline btn-lg">Visit a Store</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="25">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Trading</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="60">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Stores</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="40">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Brands Carried</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-panel reveal" aria-hidden="true">
+      <div class="spec-card spec-card-1">
+        <span class="spec-tag">MOBILES</span>
+        <div class="spec-row"><span>5G</span><span>Yes</span></div>
+        <div class="spec-row"><span>Battery</span><span>5000mAh</span></div>
+        <div class="spec-row"><span>Warranty</span><span>12 mo</span></div>
+      </div>
+      <div class="spec-card spec-card-2">
+        <span class="spec-tag">LAPTOPS</span>
+        <div class="spec-row"><span>RAM</span><span>16GB</span></div>
+        <div class="spec-row"><span>Storage</span><span>512GB SSD</span></div>
+        <div class="spec-row"><span>EMI</span><span>From ₹1,999</span></div>
+      </div>
+      <div class="spec-card spec-card-3">
+        <span class="spec-tag">APPLIANCES</span>
+        <div class="spec-row"><span>Energy</span><span>5 Star</span></div>
+        <div class="spec-row"><span>Install</span><span>Free</span></div>
+        <div class="spec-row"><span>Service</span><span>Onsite</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>APPLE</span><span>SAMSUNG</span><span>LG</span><span>BAJAJ</span><span>SONY</span>
+    <span>DELL</span><span>HP</span><span>BOSCH</span><span>WHIRLPOOL</span><span>ONEPLUS</span>
+    <span>APPLE</span><span>SAMSUNG</span><span>LG</span><span>BAJAJ</span><span>SONY</span>
+    <span>DELL</span><span>HP</span><span>BOSCH</span><span>WHIRLPOOL</span><span>ONEPLUS</span>
+  </div>
+</div>
+
+<!-- ===================== CATEGORIES ===================== -->
+<section class="categories" id="categories">
+  <div class="section-head reveal">
+    <p class="eyebrow">CAT/00 — THE CATALOGUE</p>
+    <h2>Four aisles. <span class="accent-text">No filler.</span></h2>
+  </div>
+
+  <div class="cat-grid">
+    <article class="cat-card reveal">
+      <span class="cat-index">CAT/01</span>
+      <h3>Mobiles &amp; Tablets</h3>
+      <p>Flagship, mid-range and budget — unlocked, with genuine warranty cards.</p>
+      <span class="cat-link">Explore range →</span>
+    </article>
+    <article class="cat-card reveal">
+      <span class="cat-index">CAT/02</span>
+      <h3>Laptops &amp; Computing</h3>
+      <p>For students, studios and spreadsheets. Configured before you leave the counter.</p>
+      <span class="cat-link">Explore range →</span>
+    </article>
+    <article class="cat-card reveal">
+      <span class="cat-index">CAT/03</span>
+      <h3>TV &amp; Audio</h3>
+      <p>Wall-mounted same day, calibrated for the room you actually have.</p>
+      <span class="cat-link">Explore range →</span>
+    </article>
+    <article class="cat-card reveal">
+      <span class="cat-index">CAT/04</span>
+      <h3>Home Appliances</h3>
+      <p>Refrigerators, washers and kitchen gear with free installation across cities.</p>
+      <span class="cat-link">Explore range →</span>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTS / ADD TO CART ===================== -->
+<section class="products" id="products">
+  <div class="section-head reveal">
+    <p class="eyebrow">CAT/05 — IN STOCK TODAY</p>
+    <h2>Pick a few. <span class="accent-text">Pay once.</span></h2>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <!-- product cards are injected by script.js from the PRODUCTS array,
+         keeps this section and the cart logic in sync -->
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section class="why" id="why">
+  <div class="section-head reveal">
+    <p class="eyebrow">WHY VANTRA</p>
+    <h2>Retail, the way it should <span class="accent-text">work.</span></h2>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <span class="why-icon">⚡</span>
+      <h3>Same-Day Delivery</h3>
+      <p>Order before 4pm in serviceable pin codes, unbox it before dinner.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🛡</span>
+      <h3>Genuine Warranty</h3>
+      <p>Every product billed with manufacturer warranty, registered on the spot.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">💳</span>
+      <h3>No-Cost EMI</h3>
+      <p>Split payments across major banks and cards with zero extra interest.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🔧</span>
+      <h3>In-House Service</h3>
+      <p>Authorised repair centres — not a courier to somewhere unknown.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BRANDS / TESTIMONIAL STRIP ===================== -->
+<section class="brands" id="brands">
+  <div class="brands-inner">
+    <div class="brands-copy reveal">
+      <p class="eyebrow">BRANDS WE CARRY</p>
+      <h2>If it's worth making, <span class="accent-text">it's on our shelf.</span></h2>
+      <p class="brands-sub">From flagship phones to five-star refrigerators, every brand is sourced
+      directly — no grey imports, no guesswork on warranty.</p>
+    </div>
+    <div class="brands-tiles reveal">
+      <div class="tile">Apple</div>
+      <div class="tile">Samsung</div>
+      <div class="tile">LG</div>
+      <div class="tile">Sony</div>
+      <div class="tile">Dell</div>
+      <div class="tile">HP</div>
+      <div class="tile">Bosch</div>
+      <div class="tile">Whirlpool</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORES / CTA ===================== -->
+<section class="stores" id="stores">
+  <div class="stores-grid reveal">
+    <div class="stores-copy">
+      <p class="eyebrow">STORE NETWORK</p>
+      <h2>Outlets across <span class="accent-text">Karnataka &amp; Telangana.</span></h2>
+      <p>Bangalore · Hyderabad · Mysore · Mangalore · Hubli · Belgaum · Hassan · Udupi
+      — and counting. Walk in, compare side by side, walk out with it boxed.</p>
+      <a href="#contact" class="btn btn-solid btn-lg">Locate Nearest Store</a>
+    </div>
+    <div class="stores-list">
+      <div class="store-row"><span>Bangalore</span><span>14 stores</span></div>
+      <div class="store-row"><span>Hyderabad</span><span>9 stores</span></div>
+      <div class="store-row"><span>Mysore</span><span>3 stores</span></div>
+      <div class="store-row"><span>Mangalore</span><span>2 stores</span></div>
+      <div class="store-row"><span>Hubli &amp; Belgaum</span><span>2 stores</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT / FOOTER ===================== -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <span class="nav-logo-mark">V</span>
+        <span class="nav-logo-text">VANTRA</span>
+      </div>
+      <p>Electronics, appliances &amp; everything that plugs in — retailed honestly since 2000.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#categories">Mobiles &amp; Tablets</a>
+      <a href="#categories">Laptops</a>
+      <a href="#categories">TV &amp; Audio</a>
+      <a href="#categories">Appliances</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#why">Why Vantra</a>
+      <a href="#brands">Brands</a>
+      <a href="#stores">Store Locator</a>
+      <a href="#top">Careers</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <a href="tel:+918000000000">+91 80000 00000</a>
+      <a href="mailto:hello@vantra.example">hello@vantra.example</a>
+      <p class="footer-note">Mon–Sun, 10am – 8:30pm</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Vantra Electronics. All rights reserved.</span>
+    <span>Template design — not affiliated with any registered trademark.</span>
+  </div>
+</footer>
+
+<!-- ===================== CART DRAWER ===================== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-head">
+    <h3>Your Cart</h3>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+
+  <div class="cart-items" id="cartItems">
+    <!-- injected by script.js -->
+    <p class="cart-empty" id="cartEmpty">Your cart is empty. Go break something in.</p>
+  </div>
+
+  <div class="cart-summary">
+    <div class="cart-summary-row">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">₹0</span>
+    </div>
+    <div class="cart-summary-row cart-summary-muted">
+      <span>Delivery</span>
+      <span>Free</span>
+    </div>
+    <div class="cart-summary-row cart-summary-total">
+      <span>Total</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <button class="btn btn-solid btn-lg cart-checkout-btn" id="openCheckoutBtn">Proceed to Pay</button>
+    <p class="cart-secure-note">🔒 Payments handled by Razorpay · test mode</p>
+  </div>
+</aside>
+
+<!-- ===================== CHECKOUT MODAL ===================== -->
+<div class="checkout-overlay" id="checkoutOverlay">
+  <div class="checkout-modal">
+    <div class="checkout-head">
+      <h3>Checkout</h3>
+      <button class="cart-close" id="checkoutClose" aria-label="Close checkout">✕</button>
+    </div>
+
+    <form id="checkoutForm">
+      <label>Full name
+        <input type="text" id="custName" required placeholder="Asha Rao">
+      </label>
+      <label>Email
+        <input type="email" id="custEmail" required placeholder="asha@example.com">
+      </label>
+      <label>Phone
+        <input type="tel" id="custPhone" required placeholder="98765 43210" pattern="[0-9]{10}">
+      </label>
+      <label>Delivery address
+        <textarea id="custAddress" required placeholder="House no, street, city, PIN"></textarea>
+      </label>
+
+      <div class="checkout-total-row">
+        <span>Amount payable</span>
+        <span id="checkoutAmount">₹0</span>
+      </div>
+
+      <button type="submit" class="btn btn-solid btn-lg checkout-pay-btn" id="payNowBtn">
+        Pay with Razorpay
+      </button>
+      <p class="cart-secure-note">Test mode — use card 4111 1111 1111 1111, any future date &amp; CVV.</p>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== PAYMENT SUCCESS TOAST ===================== -->
+<div class="pay-toast" id="payToast">
+  <span class="pay-toast-icon">✓</span>
+  <div>
+    <strong>Payment successful</strong>
+    <p id="payToastDetail">Order confirmed.</p>
+  </div>
+</div>
+
+<!-- Razorpay Checkout.js -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
